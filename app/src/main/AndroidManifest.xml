@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wangdaye.mysplash">
+
+    <application
+        android:name=".Mysplash"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/MysplashTheme_light"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:taskAffinity="com.wangdaye.mysplash"
+        android:allowTaskReparenting="true"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning,ManifestResource">
+
+        <activity
+            android:name=".main.view.activity.MainActivity"
+            android:theme="@style/MysplashTheme_light.TranslucentNavigation.Main"
+            android:launchMode="singleTask"
+            android:screenOrientation="user"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.wangdaye.mysplash.Search" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".search.view.activity.SearchActivity"
+            android:theme="@style/MysplashTheme_light.Common"
+            android:screenOrientation="user"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".main.view.activity.NotificationActivity"
+            android:theme="@style/MysplashTheme_light.Common"
+            android:screenOrientation="user"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".photo2.view.activity.PhotoActivity2"
+            android:theme="@style/MysplashTheme_light.TranslucentNavigation.Photo2"
+            android:screenOrientation="user"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".common.ui.activity.PreviewActivity"
+            android:theme="@style/MysplashTheme_light.Translucent.TranslucentNavigation"
+            android:screenOrientation="user"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".collection.view.activity.CollectionActivity"
+            android:theme="@style/MysplashTheme_light.TranslucentNavigation.Collection"
+            android:screenOrientation="user"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".user.view.activity.UserActivity"
+            android:theme="@style/MysplashTheme_light.TranslucentNavigation.User"
+            android:screenOrientation="user"
+            android:label="@string/app_name" />
+
+        <activity android:name=".common.ui.activity.LoginActivity"
+            android:theme="@style/MysplashTheme_light.Translucent.Common"
+            android:screenOrientation="user"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <data
+                    android:scheme="mysplash"
+                    android:host="unsplash-auth-callback" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".me.view.activity.MeActivity"
+            android:theme="@style/MysplashTheme_light.TranslucentNavigation.Me"
+            android:screenOrientation="user"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="com.wangdaye.mysplash.Me" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".me.view.activity.MyFollowActivity"
+            android:theme="@style/MysplashTheme_light.Translucent.Common"
+            android:screenOrientation="user"
+            android:label="@string/app_name" />
+
+        <activity android:name=".common.ui.activity.UpdateMeActivity"
+            android:theme="@style/MysplashTheme_light.Translucent.Common"
+            android:screenOrientation="user"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".common.ui.activity.DownloadManageActivity"
+            android:theme="@style/MysplashTheme_light.Common"
+            android:screenOrientation="user"
+            android:launchMode="singleTask"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="com.wangdaye.mysplash.DownloadManager" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".common.ui.activity.SettingsActivity"
+            android:theme="@style/MysplashTheme_light.Translucent.Settings"
+            android:screenOrientation="user"
+            android:label="@string/action_settings" />
+
+        <activity
+            android:name=".about.view.activity.AboutActivity"
+            android:theme="@style/MysplashTheme_light.Translucent.Common"
+            android:screenOrientation="user"
+            android:label="@string/action_about"/>
+
+        <activity
+            android:name=".common.ui.activity.IntroduceActivity"
+            android:theme="@style/MysplashTheme_light.Translucent.Common"
+            android:screenOrientation="user"
+            android:label="@string/app_name" />
+
+        <activity android:name=".common.ui.activity.CustomApiActivity"
+            android:theme="@style/MysplashTheme_light.Translucent.Common"
+            android:screenOrientation="user"
+            android:label="@string/app_name" />
+
+        <activity android:name=".common.ui.activity.SetWallpaperActivity"
+            android:theme="@style/MysplashTheme_dark.SetWallpaper"
+            android:screenOrientation="user"
+            android:launchMode="singleInstance"
+            android:label="@string/app_name">
+            <intent-filter>
+                <data android:mimeType="image/*" />
+                <action android:name="android.intent.action.ATTACH_DATA" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".common.ui.activity.MuzeiConfigurationActivity"
+            android:theme="@style/MysplashTheme_light.Translucent.Common"
+            android:screenOrientation="user"
+            android:label="@string/action_muzei_settings"
+            android:launchMode="singleTask"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".common.ui.activity.invisible.RestartActivity"
+            android:theme="@style/MysplashTheme_light.Translucent.Common" />
+
+        <activity
+            android:name=".common.ui.activity.invisible.DispatchBrowserActionActivity"
+            android:theme="@style/MysplashTheme_dark.Translucent.Common"
+            android:launchMode="singleTask">
+
+            <intent-filter>
+                <data
+                    android:scheme="https"
+                    android:host="unsplash.com"
+                    android:path="/" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            <intent-filter>
+                <data
+                    android:scheme="https"
+                    android:host="unsplash.com"
+                    android:pathPrefix="/photos/" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            <intent-filter>
+                <data
+                    android:scheme="https"
+                    android:host="unsplash.com"
+                    android:pathPrefix="/collections/" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            <intent-filter>
+                <data
+                    android:scheme="https"
+                    android:host="unsplash.com"
+                    android:pathPattern=".*/@.*" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+
+        </activity>
+
+        <!-- receiver. -->
+
+        <receiver
+            android:name=".common.receiver.DownloadReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- service. -->
+
+        <service
+            android:name=".common.service.MuzeiSourceService"
+            android:label="@string/app_name"
+            android:description="@string/muzei_description"
+            android:icon="@drawable/ic_notification"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="com.google.android.apps.muzei.api.MuzeiArtSource" />
+            </intent-filter>
+            <meta-data
+                android:name="color"
+                android:value="@color/colorPrimary_dark" />
+            <meta-data
+                android:name="settingsActivity"
+                android:value=".common.ui.activity.MuzeiConfigurationActivity" />
+        </service>
+
+        <!-- provider. -->
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.wangdaye.mysplash"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET"
+        tools:ignore="ManifestOrder" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
+    <!-- Muzei. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+</manifest>
